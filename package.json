@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
+    "format:nowrite": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|ts|tsx|html|css|scss|json)\"",
+    "format": "pnpm format:nowrite --write",
+    "lint": "eslint --ignore-path .gitignore \"**/*.+(js|jsx|ts|tsx)\"",
+    "lint:fix": "pnpm lint --fix",
+    "typecheck": "tsc --noEmit",
     "dev": "next dev",
+    "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "preview": "next build && next start"
   },
   "dependencies": {
     "@radix-ui/react-toast": "^1.1.4",
